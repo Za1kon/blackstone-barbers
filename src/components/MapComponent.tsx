@@ -101,10 +101,10 @@ export default function MapComponent() {
         style={{ height: "100%", width: "100%" }}
         zoomControl={true}
       >
-        {/* Dark tile layer — Stadia Maps Alidade Smooth Dark (free, no key needed) */}
+        {/* Stadia Maps dark tiles */}
         <TileLayer
           attribution='&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a>, &copy; <a href="https://openstreetmap.org">OpenStreetMap</a>'
-          url="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png"
+          url={`https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png?api_key=${process.env.NEXT_PUBLIC_STADIA_MAPS_API_KEY}`}
         />
         <Marker position={[LAT, LNG]} icon={goldIcon}>
           <Popup>
